@@ -71,3 +71,40 @@
 - 클래스 안에서 다른 클래스의 것을 사용한다 하여 **'포함 관계'** 라 함.
 
 - 보통 생성자(constructor)에서 참조 자료형 객체를 생성.
+
+<br/>
+
+## 객체 생성
+- 객체 생성 시, <객체 명> 부여해도 됨. 다만, 해당 참조 자료형이 있는 클래스 생성자에 이름 반환하는 코드 작성 필요함.
+```
+(예)
+[Student.java]
+korea = new Subject("국어");
+
+[Subject.java]
+public Subject(String name) {subjectName = name;}
+```
+
+<br/>
+
+## 참조 타입에 따른 분류
+- public : 외부 클래스도 다 가져다 쓸 수 있음.
+- private : 나의 클래스 안에서만 가능
+- default(아무것도 안 씀) : 같은 패키지 내에서는 access 가능.
+- protect(상속) : 기본적으로는 private와 같으나, 상속 관계에서만 public처럼 사용 가능.
+
+<br/>
+
+## 접근 제어자
+### private
+- 같은 클래스 내에서만 사용 가능(그 외는 값을 숨김).
+- 목적? 데이터의 무결성 보존.
+> 데이터 무결이 침범되면 심각한 문제가 생긴다고 볼 때 사용.
+- 방법? getter/setter 메서드 사용.
+- getter/setter 형태
+```
+public ~ {
+this.day = day; }
+
+/* Read Only */
+public~ { return day; }
